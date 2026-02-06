@@ -5,14 +5,20 @@
     <id>http://www.zotero.org/styles/american-medical-association-etal1</id>
     <link href="http://www.zotero.org/styles/american-medical-association" rel="template"/>
     <author>
-      <name>Custom (ChatGPT)</name>
+      <name>Custom</name>
     </author>
     <category citation-format="numeric"/>
     <category field="medicine"/>
     <updated>2026-02-06</updated>
   </info>
 
-  <!-- CITAIZONI NEL TESTO: numeri in apice -->
+  <locale>
+    <terms>
+      <term name="et-al">et al.</term>
+    </terms>
+  </locale>
+
+  <!-- CITAZIONI NEL TESTO: numeri in apice -->
   <citation collapse="citation-number">
     <sort>
       <key variable="citation-number"/>
@@ -30,8 +36,8 @@
 
       <!-- AUTORI: sempre 1 + et al. -->
       <names variable="author" et-al-min="1" et-al-use-first="1">
-        <name form="short" and="text" delimiter=", "/>
-        <et-al term="et-al"/>
+        <name form="short" delimiter=", "/>
+        <et-al/>
       </names>
 
       <text value=". "/>
@@ -39,7 +45,11 @@
       <text value=". "/>
       <text variable="container-title"/>
       <text value=". "/>
-      <text variable="issued"/>
+
+      <!-- ANNO -->
+      <date variable="issued">
+        <date-part name="year"/>
+      </date>
     </layout>
   </bibliography>
 </style>
