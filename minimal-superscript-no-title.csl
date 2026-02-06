@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-US">
+  <info>
+    <title>Minimal Superscript No Title</title>
+    <id>http://www.zotero.org/styles/minimal-superscript-no-title</id>
+    <link href="http://www.zotero.org/styles/minimal-superscript-no-title" rel="self"/>
+    <author>
+      <name>Custom</name>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="generic"/>
+  </info>
+
+  <!-- Short author list -->
+  <macro name="author-short">
+    <names variable="author">
+      <name form="short" and="text" delimiter=", "/>
+      <et-al term="et-al"/>
+    </names>
+  </macro>
+
+  <!-- Year only -->
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <!-- Citation: superscript number -->
+  <citation collapse="citation-number">
+    <layout vertical-align="sup">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <!-- Bibliography: no title, minimal punctuation -->
+  <bibliography>
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout>
+      <text variable="citation-number"/>
+      <text value=" "/>
+      <text macro="author-short"/>
+      <text value=" "/>
+      <text macro="year"/>
+      <text value=" "/>
+      <group>
+        <text variable="container-title"/>
+        <text variable="volume" prefix=" "/>
+        <text variable="page" prefix=" "/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
